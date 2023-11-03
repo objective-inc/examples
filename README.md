@@ -8,6 +8,6 @@ Find the example in the `apps` directory for the language or framework you plan 
 
 ## Quickstart projects
 
--   [cURL](https://github.com/kailualabs/objective-inc-quickstart-scripts/tree/main/apps/curl-quickstart)
--   [python](https://github.com/kailualabs/objective-inc-quickstart-scripts/tree/main/apps/python-quickstart)
--   [node](https://github.com/kailualabs/objective-inc-quickstart-scripts/tree/main/apps/node-quickstart)
+-   [cURL](https://github.com/objective-inc/examples/tree/main/apps/curl-quickstart)
+-   [python](https://github.com/objective-inc/examples/tree/main/apps/python-quickstart)
+-   [node](https://github.com/objective-inc/examples/tree/main/apps/node-quickstart)
