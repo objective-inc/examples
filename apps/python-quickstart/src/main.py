@@ -1,15 +1,12 @@
 import requests
 import json
 
-# Replace this line with your Index ID. You can find this in the onboarding
-index_id = ""
-
 # Replace this line with your API key. You can find this in the onboarding
 api_key = ""
 
 
 headers = {
-    "Apikey": f"{api_key}",
+    "Authorization": f"Bearer {api_key}",
     "Content-Type": "application/json",
 }
 
@@ -28,7 +25,7 @@ objects = [
 
 def create_object(obj):
     """Simple helper method to push Objects to the API"""
-    url = f"https://api.kailualabs.com/v1/catalogs/{index_id}/objects"
+    url = f"https://api.objective.inc/v1/objects"
     response = requests.post(url, headers=headers, json=obj)
     return response
 
