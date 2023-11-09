@@ -14,6 +14,6 @@ To install the required npm modules
 
 ## Sending data
 
--   Replace the contents of `index.ts` with your API key, and Index ID. You can find both of these in our onboarding.
+-   Replace the contents of `index.ts` with your API key
 -   Update the object to include data you want to add to the object store
 -   Run `npm run start` and you should see data logged to the console

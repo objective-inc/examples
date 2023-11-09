@@ -12,6 +12,6 @@ chmod +x send_data.sh
 
 ## Sending data
 
--   Replace the contents of `send_data.sh` with your API key, and Index ID. You can find both of these in our onboarding.
+-   Replace the contents of `send_data.sh` with your API key
 -   Update the object to include data you want to add to the object store
 -   Run `./send_data.sh` from the root and you should see data logged to the console

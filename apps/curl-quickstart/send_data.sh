@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Replace this line with your Index ID. You can find this in the onboarding
-INDEX_ID=""
-
 # Replace this line with your API key. You can find this in the onboarding
 API_KEY=""
 
@@ -10,11 +7,11 @@ API_KEY=""
 DATA='{"title": "My data title", "id": 123}'
 
 # API endpoint
-URL="https://api.kailualabs.com/v1/catalogs/$INDEX_ID/objects"
+URL="https://api.objective.inc/v1/objects"
 
 # Make the POST request
 RESPONSE=$(curl -s -X POST "$URL" \
-    -H "Apikey: $API_KEY" \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d "$DATA")
 
