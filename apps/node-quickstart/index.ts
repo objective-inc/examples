@@ -1,8 +1,8 @@
 // Replace this line with your API key. You can find this in the onboarding
-const apiKey: string = ""
+const apiKey = ""
 
 // Replace this line with your data. This is the data that will be sent to the Object Store
-const myTestObject: any = {
+const myTestObject = {
     title: "My data title",
     id: 123,
 }
