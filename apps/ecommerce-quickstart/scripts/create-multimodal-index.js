@@ -14,7 +14,7 @@ const createIndex = async () => {
             body: JSON.stringify({
                 configuration: {
                     index_type: {
-                        name: "text",
+                        name: "multimodal",
                     },
                     fields: {
                         searchable: {
