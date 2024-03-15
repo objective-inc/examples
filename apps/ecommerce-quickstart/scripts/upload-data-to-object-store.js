@@ -1,7 +1,7 @@
 const fs = require("fs").promises
 const axios = require("axios")
 
-const API_KEY = "sk_gkjsF4o41fwn"
+const API_KEY = ""
 
 const uploadData = async () => {
     try {
