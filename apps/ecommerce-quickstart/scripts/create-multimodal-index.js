@@ -1,6 +1,3 @@
-const fs = require("fs").promises
-const axios = require("axios")
-
 const API_KEY = ""
 
 const createIndex = async () => {
