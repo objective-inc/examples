@@ -80,13 +80,13 @@ export default function Home() {
                     >
                         Shop by Category
                     </h2>
-                    <a
-                        href="#"
+                    <Link
+                        href="/search"
                         className="hidden text-sm font-semibold  sm:block"
                     >
                         Browse all categories
                         <span aria-hidden="true"> &rarr;</span>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="mt-4 flow-root">
@@ -124,10 +124,13 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6 px-4 sm:hidden">
-                    <a href="#" className="block text-sm font-semibold ">
+                    <Link
+                        href="/search"
+                        className="block text-sm font-semibold "
+                    >
                         Browse all categories
                         <span aria-hidden="true"> &rarr;</span>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>
