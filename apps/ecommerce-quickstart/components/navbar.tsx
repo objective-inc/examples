@@ -5,8 +5,8 @@ import { Cart } from "./cart"
 
 const menu = [
     { title: "All", path: "/" },
-    { title: "Shirts", path: "/shirts" },
-    { title: "Pants", path: "/contact" },
+    { title: "Shirts", path: "/search?query=shirts" },
+    { title: "Pants", path: "/search?query=pants" },
 ]
 
 export default function Navbar() {

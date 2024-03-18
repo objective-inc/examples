@@ -11,8 +11,9 @@ function PathFilterItem({ item }: { item: PathFilterItem }) {
     const pathname = usePathname()
     const searchParams = useSearchParams()
 
-    const active =
-        `${pathname}?query=${searchParams.get("query")}` === item.path
+    const active = searchParams.get("query")
+        ? `${pathname}?query=${searchParams.get("query")}` === item.path
+        : pathname === item.path
 
     // const active = pathname === item.path
     const newParams = new URLSearchParams(searchParams.toString())
