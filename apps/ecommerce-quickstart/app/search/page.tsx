@@ -12,7 +12,10 @@ export interface SearchPageProps {
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
     const params = searchParams || {}
-    const { offset, limit, query } = indexSearchSchema.parse(params)
+    const { offset, limit, query, filterQuery } =
+        indexSearchSchema.parse(params)
+
+    console.log(filterQuery)
 
     const { results, pagination } = await objective.indexes.index.search(
         INDEX_ID as string,
@@ -21,6 +24,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             limit,
             offset,
             object_fields: "*",
+            filter_query: filterQuery,
         }
     )
 
@@ -29,7 +33,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
     return (
         <>
-            {query ? (
+            {query || filterQuery ? (
                 <p className="mb-4">
                     {objects.length === 0
                         ? "There are no products that match "
