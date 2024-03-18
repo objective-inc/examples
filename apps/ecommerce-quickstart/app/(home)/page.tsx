@@ -80,7 +80,7 @@ export default function Home() {
                     </h2>
                     <a
                         href="#"
-                        className="hidden text-sm font-semibold text-white hover:text-gray-300 sm:block"
+                        className="hidden text-sm font-semibold  sm:block"
                     >
                         Browse all categories
                         <span aria-hidden="true"> &rarr;</span>
@@ -122,10 +122,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6 px-4 sm:hidden">
-                    <a
-                        href="#"
-                        className="block text-sm font-semibold text-white hover:text-gray-300"
-                    >
+                    <a href="#" className="block text-sm font-semibold ">
                         Browse all categories
                         <span aria-hidden="true"> &rarr;</span>
                     </a>

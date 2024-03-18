@@ -16,9 +16,9 @@ export default function Search() {
         const newParams = new URLSearchParams(searchParams.toString())
 
         if (search.value) {
-            newParams.set("q", search.value)
+            newParams.set("query", search.value)
         } else {
-            newParams.delete("q")
+            newParams.delete("query")
         }
 
         router.push(createUrl("/search", newParams))

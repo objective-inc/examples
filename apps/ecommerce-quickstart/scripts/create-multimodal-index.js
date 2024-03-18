@@ -16,18 +16,27 @@ const createIndex = async () => {
                     fields: {
                         searchable: {
                             allow: [
+                                "colour_group_name",
+                                "detail_desc",
+                                "department_name",
+                                "garment_group_name",
+                                "index_group_name",
+                                "perceived_colour_master_name",
+                                "perceived_colour_value_name",
                                 "product_type_name",
                                 "product_group_name",
-                                "graphical_appearance_name",
-                                "department_name",
-                                "index_name",
                                 "section_name",
-                                "garment_group_name",
-                                "detail_desc",
                             ],
                         },
                         crawlable: {
                             allow: ["image_url"],
+                        },
+                        filterable: {
+                            allow: [
+                                "perceived_colour_master_name",
+                                "price",
+                                "rating",
+                            ],
                         },
                     },
                 },
