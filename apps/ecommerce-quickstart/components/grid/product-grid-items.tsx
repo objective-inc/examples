@@ -22,6 +22,8 @@ export default function ProductGridItems({
                                 title: product.prod_name,
                                 amount: product.price,
                                 currencyCode: "USD",
+                                perceived_colour_master_name:
+                                    product.perceived_colour_master_name,
                             }}
                             src={product.image_url}
                             fill
