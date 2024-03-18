@@ -1,4 +1,27 @@
 import Link from "next/link"
+const incentives = [
+    {
+        name: "Free shipping",
+        imageSrc:
+            "https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg",
+        description:
+            "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+    },
+    {
+        name: "10-year warranty",
+        imageSrc:
+            "https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg",
+        description:
+            "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+    },
+    {
+        name: "Exchanges",
+        imageSrc:
+            "https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg",
+        description:
+            "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+    },
+]
 
 const categories = [
     {
@@ -133,6 +156,137 @@ export default function Home() {
                     </Link>
                 </div>
             </section>
+            <div className="bg-white mt-48">
+                <div className="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
+                    <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+                        <div className="max-w-3xl">
+                            <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+                                We built our business on customer service
+                            </h2>
+                            <p className="mt-4 text-gray-500">
+                                At the beginning at least, but then we realized
+                                we could make a lot more money if we kinda
+                                stopped caring about that. Our new strategy is
+                                to write a bunch of things that look really good
+                                in the headlines, then clarify in the small
+                                print but hope people don't actually read it.
+                            </p>
+                        </div>
+                        <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+                            {incentives.map((incentive) => (
+                                <div
+                                    key={incentive.name}
+                                    className="sm:flex lg:block"
+                                >
+                                    <div className="sm:flex-shrink-0">
+                                        <img
+                                            className="h-16 w-16"
+                                            src={incentive.imageSrc}
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
+                                        <h3 className="text-sm font-medium text-gray-900">
+                                            {incentive.name}
+                                        </h3>
+                                        <p className="mt-2 text-sm text-gray-500">
+                                            {incentive.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-transparent mt-48">
+                <div className="overflow-hidden pt-32 sm:pt-14">
+                    <div className="bg-neutral-800">
+                        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                            <div className="relative pb-16 pt-48 sm:pb-24">
+                                <div>
+                                    <h2
+                                        id="sale-heading"
+                                        className="text-4xl font-bold tracking-tight text-white md:text-5xl"
+                                    >
+                                        Final Stock.
+                                        <br />
+                                        Up to 50% off.
+                                    </h2>
+                                    <div className="mt-6 text-base">
+                                        <Link
+                                            href="/search"
+                                            className="font-semibold text-white"
+                                        >
+                                            Shop the sale
+                                            <span aria-hidden="true">
+                                                {" "}
+                                                &rarr;
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+
+                                <div className="absolute -top-32 left-1/2 -translate-x-1/2 transform sm:top-6 sm:translate-x-0">
+                                    <div className="ml-24 flex min-w-max space-x-6 sm:ml-3 lg:space-x-8">
+                                        <div className="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                                            <div className="flex-shrink-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <div className="mt-6 flex-shrink-0 sm:mt-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="flex space-x-6 sm:-mt-20 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                                            <div className="flex-shrink-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-01.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <div className="mt-6 flex-shrink-0 sm:mt-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-02.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="flex space-x-6 sm:flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
+                                            <div className="flex-shrink-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <div className="mt-6 flex-shrink-0 sm:mt-0">
+                                                <img
+                                                    className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
+                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
