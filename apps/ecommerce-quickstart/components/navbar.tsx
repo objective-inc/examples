@@ -1,6 +1,7 @@
 import { BrandLogo } from "@/components/logo"
 import Search from "@/components/search"
 import Link from "next/link"
+import { Cart } from "./cart"
 
 const menu = [
     { title: "All", path: "/" },
@@ -37,11 +38,9 @@ export default function Navbar() {
                 <div className="hidden justify-center md:flex md:w-1/3">
                     <Search />
                 </div>
-                {/* <div className="flex justify-end md:w-1/3">
-                    <Suspense fallback={<OpenCart />}>
-                        <Cart />
-                    </Suspense>
-                </div> */}
+                <div className="flex justify-end md:w-1/3">
+                    <Cart />
+                </div>
             </div>
         </nav>
     )
