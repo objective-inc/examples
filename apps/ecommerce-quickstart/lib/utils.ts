@@ -1,4 +1,6 @@
 import { ReadonlyURLSearchParams } from "next/navigation"
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
 export const createUrl = (
     pathname: string,
@@ -8,4 +10,8 @@ export const createUrl = (
     const queryString = `${paramsString.length ? "?" : ""}${paramsString}`
 
     return `${pathname}${queryString}`
+}
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
 }
