@@ -1,31 +1,33 @@
+import Link from "next/link"
+
 const categories = [
     {
-        name: "New Arrivals",
-        href: "#",
+        name: "T-Shirts",
+        href: "/search?query=t-shirts",
         imageSrc:
             "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/075/0759426002.jpg",
     },
     {
         name: "Shirts",
-        href: "#",
+        href: "/search?query=shirts",
         imageSrc:
             "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/066/0668051006.jpg",
     },
     {
         name: "Pants",
-        href: "#",
+        href: "/search?query=pants",
         imageSrc:
             "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/055/0550888007.jpg",
     },
     {
         name: "Jackets",
-        href: "#",
+        href: "/search?query=jackets",
         imageSrc:
             "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/069/0696758003.jpg",
     },
     {
         name: "Accessories",
-        href: "#",
+        href: "/search?query=accessories",
         imageSrc:
             "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/041/0417427035.jpg",
     },
@@ -58,12 +60,12 @@ export default function Home() {
                         the latest options from our summer small-batch release
                         while they're still in stock.
                     </p>
-                    <a
-                        href="#"
+                    <Link
+                        href="/search"
                         className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
                     >
                         Shop New Arrivals
-                    </a>
+                    </Link>
                 </div>
             </div>
             {/* Category section */}

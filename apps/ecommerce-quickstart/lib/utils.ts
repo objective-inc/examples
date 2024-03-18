@@ -56,9 +56,12 @@ export function updateUrlWithColor(
         if (colorFilters) {
             // Replace or remove the existing color filter
             newFilterQuery = newFilterQuery.replace(
+                // @ts-ignore
                 existingFilterMatch[0],
+                // @ts-ignore
                 colors.length > 0
-                    ? `(${colorParamKey}:"${colors.join(
+                    ? // @ts-ignore
+                      `(${colorParamKey}:"${colors.join(
                           `" OR ${colorParamKey}:"`
                       )}")`
                     : ""

@@ -25,9 +25,9 @@ export default function SearchLayout({
                 <div className="order-last min-h-screen w-full md:order-none">
                     {children}
                 </div>
-                <div className="order-none flex-none md:order-last md:w-[125px]">
+                {/* <div className="order-none flex-none md:order-last md:w-[125px]">
                     Filter
-                </div>
+                </div> */}
             </div>
         </Suspense>
     )
