@@ -2,17 +2,6 @@ import clsx from "clsx"
 import Image from "next/image"
 import Label from "../label"
 
-export const renderColorSwatches = (color: string) => {
-    const c = color.toLowerCase()
-
-    return (
-        <div
-            className={`h-6 w-6 rounded-full border`}
-            style={{ backgroundColor: c }}
-        />
-    )
-}
-
 export function GridTileImage({
     isInteractive = true,
     active,
@@ -56,22 +45,10 @@ export function GridTileImage({
                     amount={label.amount}
                     currencyCode={label.currencyCode}
                     position={label.position}
+                    perceived_colour_master_name={
+                        label.perceived_colour_master_name
+                    }
                 />
-            ) : null}
-            {label ? (
-                <>
-                    <div
-                        className={clsx(
-                            "absolute bottom-0 right-0 flex justify-end w-full px-4 pb-4 @container/label"
-                        )}
-                    >
-                        <div className="flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white">
-                            {renderColorSwatches(
-                                label.perceived_colour_master_name
-                            )}
-                        </div>
-                    </div>
-                </>
             ) : null}
         </div>
     )

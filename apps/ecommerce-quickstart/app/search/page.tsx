@@ -25,11 +25,23 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     )
 
     const objects = results.map((result) => result.object) as Product[]
+    const resultsText = objects.length > 1 ? "results" : "result"
 
     return (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <ProductGridItems products={objects} />
-            {/* <p>Hey</p> */}
-        </Grid>
+        <>
+            {query ? (
+                <p className="mb-4">
+                    {objects.length === 0
+                        ? "There are no products that match "
+                        : `Showing ${objects.length} ${resultsText} for `}
+                    <span className="font-bold">&quot;{query}&quot;</span>
+                </p>
+            ) : null}
+            {objects.length > 0 ? (
+                <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <ProductGridItems products={objects} />
+                </Grid>
+            ) : null}
+        </>
     )
 }

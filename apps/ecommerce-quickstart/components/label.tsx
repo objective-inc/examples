@@ -1,16 +1,29 @@
 import clsx from "clsx"
 import Price from "./price"
 
+const renderColorSwatches = (color: string) => {
+    const c = color.toLowerCase()
+
+    return (
+        <div
+            className={`h-6 w-6 rounded-full border`}
+            style={{ backgroundColor: c }}
+        />
+    )
+}
+
 const Label = ({
     title,
     amount,
     currencyCode,
     position = "bottom",
+    perceived_colour_master_name,
 }: {
     title: string
     amount: string
     currencyCode: string
     position?: "bottom" | "center"
+    perceived_colour_master_name: string
 }) => {
     return (
         <div
@@ -26,7 +39,7 @@ const Label = ({
                     {title}
                 </h3>
                 <Price
-                    className="flex-none rounded-full bg-blue-600 p-2 text-white"
+                    className="flex-none rounded-full bg-black p-2 text-white"
                     amount={amount}
                     currencyCode={currencyCode}
                     currencyCodeClassName="hidden @[275px]/label:inline"
