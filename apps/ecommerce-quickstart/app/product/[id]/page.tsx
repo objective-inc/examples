@@ -1,14 +1,12 @@
-import { objective } from "@/lib/objective"
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { Suspense } from "react"
-import Link from "next/link"
-import Image from "next/image"
 import Price from "@/components/price"
 import Prose from "@/components/prose"
 import { Button } from "@/components/ui/button"
-import { Star } from "lucide-react"
+import { objective } from "@/lib/objective"
 import { cn } from "@/lib/utils"
+import { Star } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
 const relatedProducts = [
     {

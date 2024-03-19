@@ -5,8 +5,8 @@ import { Cart } from "./cart"
 
 const menu = [
     { title: "All", path: "/" },
-    { title: "Shirts", path: "/search?query=shirts" },
-    { title: "Pants", path: "/search?query=pants" },
+    { title: "Tops", path: "/search?query=tops" },
+    { title: "Bottoms", path: "/search?query=bottoms" },
 ]
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
                         href="/"
                         className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                     >
-                        <BrandLogo className="h-9 w-auto" />
+                        <BrandLogo className="h-8 w-auto" />
                     </Link>
                     {menu.length ? (
                         <ul className="hidden gap-6 text-sm md:flex md:items-center">
