@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-commerce Quickstart
+
+Welcome to the Objective E-commerce Quickstart repository! This project is designed to help you kickstart your e-commerce application using Next.js and a suite of modern development tools. It provides a solid foundation for building a scalable, feature-rich e-commerce platform.
+
+# Features
+
+-   Next.js Framework: Leverage the power of Next.js for server-side rendering, static site generation, and API routes.
+-   Objective SDK Integration: Easily interact with Objective's API for product data management and search capabilities.
+-   Tailwind CSS: Utilize Tailwind CSS for styling your application with minimal effort and high flexibility.
+-   Responsive Design: Built-in responsive design for a great user experience across all devices.
+
+### Step 1. Create an account on Objective
+
+First, [create an account on Objective](https://www.objective.inc/get-objective).
+
+After following the quickstart example, make note of your API Key, and Index ID which you'll be needing later.
+
+### Step 2. Setting up environment variables
+
+Copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then set the variable on `.env.local`:
+
+-   `OBJECTIVE_API_KEY` should be the API Key from when you went through the quickstart.
+-   `OBJECTIVE_INDEX_ID` should be the ID of the Index you created in the quickstart.
+
+Your `.env.local` file should look like this:
+
+```bash
+OBJECTIVE_API_KEY=...
+OBJECTIVE_INDEX_ID=
+```
+
+# Data and Scripts
+
+The project includes a data directory and a scripts directory to facilitate easy setup and data management:
+
+-   Data: Contains sample JSON data files, such as hm10k.json, which you can use to populate your application with initial product data.
+-   Scripts: Provides utility scripts to interact with external APIs and services. For example, upload-data-to-object-store.js allows you to upload product data to an object store using the Objective API.
+
+# Uploading Data
+
+To upload the sample data to your object store, ensure you have set your API key in the script and run:
+
+```bash
+node scripts/upload-data-to-object-store.js
+```
+
+# Creating your index
+
+After uploading data you can create a multimodal index tailored to the sample data using
+
+```bash
+node scripts/create-multimodal-index.js
+```
+
+This script reads the JSON file from the data directory and uploads each object to the specified object store endpoint.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository to your local machine.
+2. Install dependencies with pnpm install.
+3. Update your environment variables by creating a `.env.local` using the vars defined in `.env.example`
+4. Start the development server with pnpm run dev
+5. Open http://localhost:3000 to view your application.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Deployment
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js. Check out the Next.js deployment documentation for more details.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or encounter any problems.
