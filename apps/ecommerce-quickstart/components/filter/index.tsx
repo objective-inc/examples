@@ -3,7 +3,7 @@ import FilterItemDropdown from "./dropdown"
 import { FilterItem } from "./item"
 
 export type ListItem = TSortFilterItem | PathFilterItem
-export type PathFilterItem = { title: string; path: string }
+export type PathFilterItem = { title: string; path: string; query: string }
 
 function FilterItemList({ list }: { list: ListItem[] }) {
     return (

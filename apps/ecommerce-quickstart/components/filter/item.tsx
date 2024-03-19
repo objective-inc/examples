@@ -12,14 +12,15 @@ function PathFilterItem({ item }: { item: PathFilterItem }) {
     const searchParams = useSearchParams()
 
     const active = searchParams.get("query")
-        ? `${pathname}?query=${searchParams.get("query")}` === item.path
-        : pathname === item.path
+        ? searchParams.get("query") === item.query
+        : false
 
     // const active = pathname === item.path
     const newParams = new URLSearchParams(searchParams.toString())
     const DynamicTag = active ? "p" : Link
 
     newParams.delete("query")
+    newParams.set("query", item.query)
 
     return (
         <li className="mt-2 flex text-black dark:text-white" key={item.title}>

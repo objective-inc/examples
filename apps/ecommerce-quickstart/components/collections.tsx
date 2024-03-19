@@ -7,34 +7,42 @@ const collections = [
     {
         title: "All",
         path: "/search",
+        query: "",
     },
     {
         title: "Tops",
-        path: "/search?query=tops",
+        path: "/search",
+        query: "tops",
     },
     {
         title: "Bottoms",
-        path: "/search?query=bottoms",
+        path: "/search",
+        query: "bottoms",
     },
     {
         title: "Accessories",
-        path: "/search?query=accessories",
+        path: "/search",
+        query: "accessories",
     },
     {
         title: "Shoes",
-        path: "/search?query=shoes",
+        path: "/search",
+        query: "shoes",
     },
     {
         title: "Dresses",
-        path: "/search?query=dresses",
+        path: "/search",
+        query: "dresses",
     },
     {
         title: "Outerwear",
-        path: "/search?query=outerwear",
+        path: "/search",
+        query: "outerwear",
     },
     {
         title: "Loungewear",
-        path: "/search?query=loungewear",
+        path: "/search",
+        query: "loungewear",
     },
 ]
 
