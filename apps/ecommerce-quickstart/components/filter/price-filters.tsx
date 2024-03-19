@@ -17,7 +17,7 @@ export const PriceFilters = () => {
 
         if (add) {
             newFilterQuery = newFilterQuery
-                ? `${newFilterQuery} OR ${price}`
+                ? `${newFilterQuery} AND ${price}`
                 : price
         } else {
             // Remove the price and clean up any resulting double "OR"
