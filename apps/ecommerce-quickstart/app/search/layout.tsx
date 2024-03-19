@@ -17,7 +17,7 @@ export default function SearchLayout({
                         <ColorFilters />
                     </div>
                 </div>
-                <div className="order-last min-h-screen w-full md:order-none">
+                <div className="order-last min-h-screen w-full md:order-none pb-24">
                     {children}
                 </div>
             </div>
