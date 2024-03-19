@@ -1,6 +1,5 @@
 "use client"
 import { Checkbox } from "@/components/ui/checkbox"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { priceFilters } from "@/config/filters"
 import { createUrl } from "@/lib/utils"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
@@ -8,8 +7,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 export const PriceFilters = () => {
     const searchParams = useSearchParams()
     const pathname = usePathname()
-    const newParams = new URLSearchParams(searchParams.toString())
     const router = useRouter()
+
+    const newParams = new URLSearchParams(searchParams.toString())
 
     const filterQuery = searchParams.get("filterQuery")
     const appendPriceFilterQuery = (price: string, add: boolean) => {
@@ -55,17 +55,14 @@ export const PriceFilters = () => {
                                 .get("filterQuery")
                                 ?.includes(price.value)}
                             onCheckedChange={(e) => {
-                                router.push(
-                                    createUrl(
-                                        pathname,
-                                        new URLSearchParams(
-                                            `filterQuery=${appendPriceFilterQuery(
-                                                price.value,
-                                                e as boolean
-                                            )}`
-                                        )
+                                newParams.set(
+                                    "filterQuery",
+                                    appendPriceFilterQuery(
+                                        price.value,
+                                        e as boolean
                                     )
                                 )
+                                router.push(createUrl(pathname, newParams))
                             }}
                         />
 

@@ -1,23 +1,24 @@
 "use client"
 import { Checkbox } from "@/components/ui/checkbox"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { priceFilters, ratingFilters } from "@/config/filters"
+import { ratingFilters } from "@/config/filters"
 import { createUrl } from "@/lib/utils"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 export const RatingFilters = () => {
     const searchParams = useSearchParams()
     const pathname = usePathname()
-    const newParams = new URLSearchParams(searchParams.toString())
     const router = useRouter()
 
     const filterQuery = searchParams.get("filterQuery")
-    const appendPriceFilterQuery = (rating: string, add: boolean) => {
+
+    const newParams = new URLSearchParams(searchParams.toString())
+
+    const appendRatingFilterQuery = (rating: string, add: boolean) => {
         let newFilterQuery = filterQuery || ""
 
         if (add) {
             newFilterQuery = newFilterQuery
-                ? `${newFilterQuery} OR ${rating}`
+                ? `${newFilterQuery} AND ${rating}`
                 : rating
         } else {
             // Remove the price and clean up any resulting double "OR"
@@ -55,17 +56,14 @@ export const RatingFilters = () => {
                                 .get("filterQuery")
                                 ?.includes(rating.value)}
                             onCheckedChange={(e) => {
-                                router.push(
-                                    createUrl(
-                                        pathname,
-                                        new URLSearchParams(
-                                            `filterQuery=${appendPriceFilterQuery(
-                                                rating.value,
-                                                e as boolean
-                                            )}`
-                                        )
+                                newParams.set(
+                                    "filterQuery",
+                                    appendRatingFilterQuery(
+                                        rating.value,
+                                        e as boolean
                                     )
                                 )
+                                router.push(createUrl(pathname, newParams))
                             }}
                         />
 
