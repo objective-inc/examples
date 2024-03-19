@@ -11,6 +11,8 @@ import {
     DoubleArrowRightIcon,
 } from "@radix-ui/react-icons"
 import { PaginationButton } from "@/components/pagination-button"
+import { Pagination } from "@/components/pagination"
+import { Suspense } from "react"
 
 const INDEX_ID = process.env.OBJECTIVE_INDEX_ID as string
 
@@ -43,6 +45,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     }) as Product[]
     const resultsText = objects.length > 1 ? "results" : "result"
 
+    const isFirstPage = pagination.page === 1
+    const isLastPage = pagination.page === pagination.pages
+
     return (
         <>
             {query || filterQuery ? (
@@ -58,47 +63,17 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     <ProductGridItems products={objects} />
                 </Grid>
             ) : null}
-            {/* {pagination?.pages > 1 && (
-                <div className="flex items-center justify-between px-2 mt-16">
-                    <div className="flex-1 text-sm text-muted-foreground">
-                        Page {pagination.page} of {pagination.pages}
-                    </div>
-                    <div className="flex items-center space-x-6 lg:space-x-8">
-                        <div className="items-center space-x-2 hidden lg:flex">
-                            <p className="text-sm font-medium">Rows per page</p>
-                            <SearchResultsSelector />
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            <div className="flex items-center space-x-2">
-                                <PaginationButton
-                                    disabled={isFirstPage}
-                                    href={firstPageUrl}
-                                    ariaLabel="Go to first page"
-                                    IconComponent={DoubleArrowLeftIcon}
-                                />
-                                <PaginationButton
-                                    disabled={isFirstPage}
-                                    href={previousPageUrl}
-                                    ariaLabel="Go to previous page"
-                                    IconComponent={ChevronLeftIcon}
-                                />
-                                <PaginationButton
-                                    disabled={isLastPage}
-                                    href={nextPageUrl}
-                                    ariaLabel="Go to next page"
-                                    IconComponent={ChevronRightIcon}
-                                />
-                                <PaginationButton
-                                    disabled={isLastPage}
-                                    href={lastPageUrl}
-                                    ariaLabel="Go to last page"
-                                    IconComponent={DoubleArrowRightIcon}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )} */}
+            {pagination?.pages > 1 && (
+                <Suspense>
+                    <Pagination
+                        pages={pagination.pages}
+                        page={pagination.page}
+                        limit={limit}
+                        offset={offset}
+                        next={pagination.next}
+                    />
+                </Suspense>
+            )}
         </>
     )
 }
