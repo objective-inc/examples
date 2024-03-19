@@ -43,8 +43,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     }) as Product[]
     const resultsText = objects.length > 1 ? "results" : "result"
 
-    console.log("Objects", objects)
-
     return (
         <>
             {query || filterQuery ? (

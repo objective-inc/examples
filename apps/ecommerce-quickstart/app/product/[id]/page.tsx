@@ -50,8 +50,6 @@ export default async function ProductPage({
 
     if (!product) return notFound()
 
-    console.log("Product", product)
-
     return (
         <>
             <div className="mx-auto max-w-screen-2xl px-4">

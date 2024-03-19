@@ -2,8 +2,6 @@ import Collections from "@/components/collections"
 import { ColorFilters } from "@/components/filter/color-filters"
 import { Suspense } from "react"
 
-export const dynamic = "force-dynamic"
-
 export default function SearchLayout({
     children,
 }: {
@@ -22,9 +20,6 @@ export default function SearchLayout({
                 <div className="order-last min-h-screen w-full md:order-none">
                     {children}
                 </div>
-                {/* <div className="order-none flex-none md:order-last md:w-[125px]">
-                    Filter
-                </div> */}
             </div>
         </Suspense>
     )

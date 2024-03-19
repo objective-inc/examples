@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 const incentives = [
     {
@@ -64,7 +65,9 @@ export default function Home() {
                     aria-hidden="true"
                     className="absolute inset-0 overflow-hidden"
                 >
-                    <img
+                    <Image
+                        fill
+                        priority={true}
                         src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt=""
                         className="h-full w-full object-cover object-center"
@@ -79,9 +82,9 @@ export default function Home() {
                         New arrivals are here
                     </h1>
                     <p className="mt-4 text-xl text-white">
-                        The new arrivals have, well, newly arrived. Check out
+                        {`The new arrivals have, well, newly arrived. Check out
                         the latest options from our summer small-batch release
-                        while they're still in stock.
+                        while they're still in stock.`}
                     </p>
                     <Link
                         href="/search"
@@ -164,12 +167,12 @@ export default function Home() {
                                 We built our business on customer service
                             </h2>
                             <p className="mt-4 text-gray-500">
-                                At the beginning at least, but then we realized
+                                {`At the beginning at least, but then we realized
                                 we could make a lot more money if we kinda
                                 stopped caring about that. Our new strategy is
                                 to write a bunch of things that look really good
                                 in the headlines, then clarify in the small
-                                print but hope people don't actually read it.
+                                print but hope people don't actually read it.`}
                             </p>
                         </div>
                         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
