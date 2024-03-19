@@ -6,5 +6,6 @@ export type Product = {
         image_url: string
         price: string
         perceived_colour_master_name: string
+        rating: number
     }
 }

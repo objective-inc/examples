@@ -16,6 +16,7 @@ export function GridTileImage({
         currencyCode: string
         perceived_colour_master_name: string
         position?: "bottom" | "center"
+        rating?: number
     }
 } & React.ComponentProps<typeof Image>) {
     return (
@@ -48,6 +49,7 @@ export function GridTileImage({
                     perceived_colour_master_name={
                         label.perceived_colour_master_name
                     }
+                    rating={label?.rating ?? 0}
                 />
             ) : null}
         </div>

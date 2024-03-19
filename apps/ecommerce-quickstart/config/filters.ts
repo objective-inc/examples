@@ -25,8 +25,27 @@ export const priceFilters = [
         label: "$100-250",
         value: `price:[100 TO 250]`,
     },
+]
+
+export const ratingFilters = [
     {
-        label: "$250-500",
-        value: `price:[250 TO 500]`,
+        label: "5 stars and up",
+        value: `rating:[5 TO 5]`,
+    },
+    {
+        label: "4 stars and up",
+        value: `rating:[4 TO 5]`,
+    },
+    {
+        label: "3 stars and up",
+        value: `rating:[3 TO 5]`,
+    },
+    {
+        label: "2 stars and up",
+        value: `rating:[2 TO 5]`,
+    },
+    {
+        label: "1 star and up",
+        value: `rating:[1 TO 5]`,
     },
 ]

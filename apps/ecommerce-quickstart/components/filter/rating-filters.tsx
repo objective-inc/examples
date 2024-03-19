@@ -1,28 +1,28 @@
 "use client"
 import { Checkbox } from "@/components/ui/checkbox"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { priceFilters } from "@/config/filters"
+import { priceFilters, ratingFilters } from "@/config/filters"
 import { createUrl } from "@/lib/utils"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
-export const PriceFilters = () => {
+export const RatingFilters = () => {
     const searchParams = useSearchParams()
     const pathname = usePathname()
     const newParams = new URLSearchParams(searchParams.toString())
     const router = useRouter()
 
     const filterQuery = searchParams.get("filterQuery")
-    const appendPriceFilterQuery = (price: string, add: boolean) => {
+    const appendPriceFilterQuery = (rating: string, add: boolean) => {
         let newFilterQuery = filterQuery || ""
 
         if (add) {
             newFilterQuery = newFilterQuery
-                ? `${newFilterQuery} OR ${price}`
-                : price
+                ? `${newFilterQuery} OR ${rating}`
+                : rating
         } else {
             // Remove the price and clean up any resulting double "OR"
             newFilterQuery = newFilterQuery
-                .replace(price, "")
+                .replace(rating, "")
                 .replace(/OR\s+OR/g, "OR")
 
             // Trim leading and trailing "OR" and spaces
@@ -45,22 +45,22 @@ export const PriceFilters = () => {
     return (
         <>
             <h3 className="hidden text-sm text-neutral-500 dark:text-neutral-400 md:block">
-                Price
+                Rating
             </h3>
             <nav className="grid grid-cols-1 items-start gap-2 mt-2">
-                {priceFilters.map((price) => (
-                    <div className="flex items-center gap-2" key={price.value}>
+                {ratingFilters.map((rating) => (
+                    <div className="flex items-center gap-2" key={rating.value}>
                         <Checkbox
                             defaultChecked={searchParams
                                 .get("filterQuery")
-                                ?.includes(price.value)}
+                                ?.includes(rating.value)}
                             onCheckedChange={(e) => {
                                 router.push(
                                     createUrl(
                                         pathname,
                                         new URLSearchParams(
                                             `filterQuery=${appendPriceFilterQuery(
-                                                price.value,
+                                                rating.value,
                                                 e as boolean
                                             )}`
                                         )
@@ -69,7 +69,7 @@ export const PriceFilters = () => {
                             }}
                         />
 
-                        <span className="text-xs truncate">{price.label}</span>
+                        <span className="text-xs truncate">{rating.label}</span>
                     </div>
                 ))}
             </nav>
