@@ -1,5 +1,6 @@
 import Collections from "@/components/collections"
 import { ColorFilters } from "@/components/filter/color-filters"
+import { PriceFilters } from "@/components/filter/price-filters"
 import { Suspense } from "react"
 
 export default function SearchLayout({
@@ -15,6 +16,9 @@ export default function SearchLayout({
 
                     <div className="mt-8">
                         <ColorFilters />
+                    </div>
+                    <div className="mt-8 pr-8">
+                        <PriceFilters />
                     </div>
                 </div>
                 <div className="order-last min-h-screen w-full md:order-none pb-24">
