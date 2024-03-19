@@ -1,17 +1,9 @@
 import Grid from "@/components/grid"
 import ProductGridItems from "@/components/grid/product-grid-items"
-import { objective } from "@/lib/objective"
-import { TIndexSearch, indexSearchSchema } from "@/lib/validations/index-search"
-import { Product } from "@/lib/types"
-import { SearchResultsSelector } from "@/components/page-size-select"
-import {
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    DoubleArrowLeftIcon,
-    DoubleArrowRightIcon,
-} from "@radix-ui/react-icons"
-import { PaginationButton } from "@/components/pagination-button"
 import { Pagination } from "@/components/pagination"
+import { objective } from "@/lib/objective"
+import { Product } from "@/lib/types"
+import { TIndexSearch, indexSearchSchema } from "@/lib/validations/index-search"
 import { Suspense } from "react"
 
 const INDEX_ID = process.env.OBJECTIVE_INDEX_ID as string
@@ -44,9 +36,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         }
     }) as Product[]
     const resultsText = objects.length > 1 ? "results" : "result"
-
-    const isFirstPage = pagination.page === 1
-    const isLastPage = pagination.page === pagination.pages
 
     return (
         <>
