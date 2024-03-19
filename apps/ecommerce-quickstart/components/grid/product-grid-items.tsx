@@ -17,15 +17,15 @@ export default function ProductGridItems({
                         href={`/product/${product.id}`}
                     >
                         <GridTileImage
-                            alt={product.prod_name}
+                            alt={product.object.prod_name}
                             label={{
-                                title: product.prod_name,
-                                amount: product.price,
+                                title: product.object.prod_name,
+                                amount: product.object.price,
                                 currencyCode: "USD",
                                 perceived_colour_master_name:
-                                    product.perceived_colour_master_name,
+                                    product.object.perceived_colour_master_name,
                             }}
-                            src={product.image_url}
+                            src={product.object.image_url}
                             fill
                             sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                         />

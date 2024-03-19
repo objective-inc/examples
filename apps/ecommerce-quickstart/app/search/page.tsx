@@ -24,8 +24,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     const { offset, limit, query, filterQuery } =
         indexSearchSchema.parse(params)
 
-    console.log(offset, limit)
-
     const { results, pagination } = await objective.indexes.index.search(
         INDEX_ID as string,
         {
@@ -37,10 +35,15 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         }
     )
 
-    console.log(pagination)
-
-    const objects = results.map((result) => result.object) as Product[]
+    const objects = results.map((result) => {
+        return {
+            object: result.object,
+            id: result.id,
+        }
+    }) as Product[]
     const resultsText = objects.length > 1 ? "results" : "result"
+
+    console.log("Objects", objects)
 
     return (
         <>
