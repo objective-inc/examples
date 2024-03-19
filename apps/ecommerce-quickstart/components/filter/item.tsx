@@ -20,6 +20,8 @@ function PathFilterItem({ item }: { item: PathFilterItem }) {
     const DynamicTag = active ? "p" : Link
 
     newParams.delete("query")
+    newParams.delete("offset")
+
     newParams.set("query", item.query)
 
     return (
