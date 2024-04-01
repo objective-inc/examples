@@ -53,7 +53,10 @@ export default async function CatalogPage({ searchParams }: HomePageProps) {
 
     return (
         <Shell className="max-w-7xl">
-            <SearchInput />
+            <Suspense>
+                <SearchInput />
+            </Suspense>
+
             <div className="mt-8">
                 {data?.results?.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
