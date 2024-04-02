@@ -3,41 +3,42 @@ import Prose from "@/components/prose"
 import { Button } from "@/components/ui/button"
 import { objective } from "@/lib/objective"
 import { cn } from "@/lib/utils"
-import { Star } from "lucide-react"
+import { Clock, Star, User } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Reviews } from "./components/reviews"
 
 const relatedProducts = [
     {
-        name: "T-Shirts",
-        href: "/search?query=t-shirts",
+        name: "Vegan Options",
+        href: "/search?query=vegan+options",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/075/0759426002.jpg",
+            "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=3764&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Shirts",
-        href: "/search?query=shirts",
+        name: "Summer drinks",
+        href: "/search?query=summer+drinks",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/066/0668051006.jpg",
+            "https://plus.unsplash.com/premium_photo-1679397830538-9b5caedc85d2?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Pants",
-        href: "/search?query=pants",
+        name: "Organic Fruits",
+        href: "/search?query=organic+fruits",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/055/0550888007.jpg",
+            "https://images.unsplash.com/photo-1574362353379-369c92ccd89d?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Jackets",
-        href: "/search?query=jackets",
+        name: "Artisan Breads",
+        href: "/search?query=artisan+breads",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/069/0696758003.jpg",
+            "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=3289&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Accessories",
-        href: "/search?query=accessories",
+        name: "Gourmet Cheeses",
+        href: "/search?query=gourmet+cheeses",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/041/0417427035.jpg",
+            "https://images.unsplash.com/photo-1695606452858-39038806b143?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
 ]
 
@@ -59,7 +60,7 @@ export default async function ProductPage({
                             <Image
                                 className="h-full w-full object-contain"
                                 fill
-                                sizes="(min-width: 1024px) 66vw, 100vw"
+                                // sizes="(min-width: 1024px) 66vw, 100vw"
                                 alt={product.object.prod_name}
                                 src={product.object.image_url}
                                 priority={true}
@@ -69,15 +70,23 @@ export default async function ProductPage({
 
                     <div className="basis-full lg:basis-2/6">
                         <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
-                            <small>{product.object.section_name}</small>
                             <h1 className="mb-2 text-5xl font-medium">
-                                {product.object.prod_name}
+                                {product.object.name}
                             </h1>
-                            <div className="mr-auto w-auto rounded-full bg-black p-2 mt-1 text-xs text-white">
-                                <Price
-                                    amount={product.object.price}
-                                    currencyCode={"USD"}
-                                />
+                            <div className="flex items-center gap-4 text-xs text-muted-foreground mt-1">
+                                <div className="flex items-center gap-1">
+                                    <Clock className="h-3 w-3" />
+                                    <span>{product.object.totalTime}</span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <User className="h-3 w-3" />
+                                    <span>
+                                        {product.object.numberOfServings}{" "}
+                                        {product.object.numberOfServings === 1
+                                            ? "serving"
+                                            : "servings"}
+                                    </span>
+                                </div>
                             </div>
                             <div className="flex items-center gap-2 mt-4">
                                 {Array.from(Array(5), (e, i) => {
@@ -94,6 +103,20 @@ export default async function ProductPage({
                                     )
                                 })}
                             </div>
+                            <div className="flex flex-col mt-4">
+                                <ul>
+                                    {product.object.ingredientLines.map(
+                                        (ingredient: any) => (
+                                            <li
+                                                className="text-muted-foreground text-sm"
+                                                key={ingredient}
+                                            >
+                                                &#8226; {ingredient}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
                         </div>
 
                         {product?.object?.detail_desc ? (
@@ -101,9 +124,10 @@ export default async function ProductPage({
                                 {product.object.detail_desc}
                             </Prose>
                         ) : null}
-                        <Button>Add to cart</Button>
+                        <Button>Favorite recipe</Button>
                     </div>
                 </div>
+                <Reviews />
                 {/* Category section */}
                 <section
                     aria-labelledby="category-heading"
@@ -114,7 +138,7 @@ export default async function ProductPage({
                             id="category-heading"
                             className="text-2xl font-bold tracking-tight"
                         >
-                            Shop by Category
+                            Browse by Category
                         </h2>
                         <Link
                             href="/search"

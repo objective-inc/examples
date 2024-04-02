@@ -56,13 +56,13 @@ const Label = ({
                         })}
                     </div>
                 </div>
-
+                {/* 
                 <Price
                     className="flex-none rounded-full bg-black p-2 text-white"
                     amount={amount}
                     currencyCode={currencyCode}
                     currencyCodeClassName="hidden @[275px]/label:inline"
-                />
+                /> */}
             </div>
         </div>
     )

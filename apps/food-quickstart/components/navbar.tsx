@@ -38,9 +38,9 @@ export default function Navbar() {
                 <div className="hidden justify-center md:flex md:w-1/3">
                     <Search />
                 </div>
-                <div className="flex justify-end md:w-1/3">
+                {/* <div className="flex justify-end md:w-1/3">
                     <Cart />
-                </div>
+                </div> */}
             </div>
         </nav>
     )

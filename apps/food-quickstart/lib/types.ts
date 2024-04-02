@@ -10,6 +10,8 @@ export type Product = {
         prepTimeInSeconds: number
         totalTimeInSeconds: number
         yield: string
+        totalTime: string
+        numberOfServings: number
     }
 }
 

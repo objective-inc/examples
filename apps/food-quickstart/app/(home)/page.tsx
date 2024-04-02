@@ -72,12 +72,11 @@ export default function Home() {
                 />
                 <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
                     <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
-                        Organic Foods &amp; Goods
+                        Foods &amp; Drink Recipes
                     </h1>
                     <p className="mt-4 text-xl text-white">
-                        {`The new arrivals have, well, newly arrived. Check out
-                        the latest options from our summer small-batch release
-                        while they're still in stock.`}
+                        {`The new recipes have, well, newly arrived. Check out
+                        the latest options from our summer small-batch release.`}
                     </p>
                     <Link
                         href="/search"
@@ -205,16 +204,16 @@ export default function Home() {
                                         id="sale-heading"
                                         className="text-4xl font-bold tracking-tight text-white md:text-5xl"
                                     >
-                                        Final Stock.
+                                        Seasonal recipes
                                         <br />
-                                        Up to 50% off.
+                                        for the whole family.
                                     </h2>
                                     <div className="mt-6 text-base">
                                         <Link
                                             href="/search"
                                             className="font-semibold text-white"
                                         >
-                                            Shop the sale
+                                            View the latest
                                             <span aria-hidden="true">
                                                 {" "}
                                                 &rarr;
