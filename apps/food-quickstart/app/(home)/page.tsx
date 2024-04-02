@@ -9,51 +9,44 @@ const incentives = [
             "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
     },
     {
-        name: "10-year warranty",
+        name: "Freshness guarantee",
         imageSrc:
             "https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg",
         description:
-            "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
-    },
-    {
-        name: "Exchanges",
-        imageSrc:
-            "https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg",
-        description:
-            "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+            "Foods are guaranteed to be fresh when you receive them using our definition of fresh.",
     },
 ]
 
 const categories = [
     {
-        name: "T-Shirts",
-        href: "/search?query=t-shirts",
+        name: "Vegan Options",
+        href: "/search?query=vegan+options",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/075/0759426002.jpg",
+            "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?q=80&w=3764&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Shirts",
-        href: "/search?query=shirts",
+        name: "Summer drinks",
+        href: "/search?query=summer+drinks",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/066/0668051006.jpg",
+            "https://plus.unsplash.com/premium_photo-1679397830538-9b5caedc85d2?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Pants",
-        href: "/search?query=pants",
+        name: "Organic Fruits",
+        href: "/search?query=organic+fruits",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/055/0550888007.jpg",
+            "https://images.unsplash.com/photo-1574362353379-369c92ccd89d?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Jackets",
-        href: "/search?query=jackets",
+        name: "Artisan Breads",
+        href: "/search?query=artisan+breads",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/069/0696758003.jpg",
+            "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=3289&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        name: "Accessories",
-        href: "/search?query=accessories",
+        name: "Gourmet Cheeses",
+        href: "/search?query=gourmet+cheeses",
         imageSrc:
-            "https://d11p8vtjlacpl4.cloudfront.net/kaggle-hm-images/041/0417427035.jpg",
+            "https://images.unsplash.com/photo-1695606452858-39038806b143?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
 ]
 
@@ -236,7 +229,7 @@ export default function Home() {
                                             <div className="flex-shrink-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg"
+                                                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
@@ -244,7 +237,7 @@ export default function Home() {
                                             <div className="mt-6 flex-shrink-0 sm:mt-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg"
+                                                    src="https://images.unsplash.com/photo-1548940740-204726a19be3?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
@@ -253,7 +246,7 @@ export default function Home() {
                                             <div className="flex-shrink-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-01.jpg"
+                                                    src="https://images.unsplash.com/photo-1564759077036-3def242e69c5?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
@@ -261,7 +254,7 @@ export default function Home() {
                                             <div className="mt-6 flex-shrink-0 sm:mt-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-02.jpg"
+                                                    src="https://images.unsplash.com/photo-1546039907-7fa05f864c02?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
@@ -270,7 +263,7 @@ export default function Home() {
                                             <div className="flex-shrink-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg"
+                                                    src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=3876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
@@ -278,7 +271,7 @@ export default function Home() {
                                             <div className="mt-6 flex-shrink-0 sm:mt-0">
                                                 <img
                                                     className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-category-02.jpg"
+                                                    src="https://plus.unsplash.com/premium_photo-1677192451109-a7d3762a74fa?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                     alt=""
                                                 />
                                             </div>
