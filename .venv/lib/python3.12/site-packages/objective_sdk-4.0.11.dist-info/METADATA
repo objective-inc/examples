@@ -1,0 +1,137 @@
+Metadata-Version: 2.3
+Name: objective-sdk
+Version: 4.0.11
+Summary: Official Python SDK for Objective, Inc. APIs
+Project-URL: Homepage, https://github.com/objective-inc/objective-py
+Project-URL: Repository, https://github.com/objective-inc/objective-py
+Author-email: "Objective, Inc." <support@objective.inc>
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: more-itertools>=8.10.0
+Requires-Dist: requests>=2.26.0
+Provides-Extra: tests
+Requires-Dist: pytest; extra == 'tests'
+Description-Content-Type: text/markdown
+
+# Objective, Inc. Python Library
+
+This is the official python library for the Objective APIs. It provides convenient methods for using Objective's APIs. 
+
+## Documentation
+
+Our documentation can be found at [docs.objective.inc](https://docs.objective.inc).
+
+## Install and configure API key
+
+To get an API key today join the [waitlist](https://www.objective.inc/contact).
+
+```bash
+pip install objective-sdk
+```
+
+## Quickstart
+
+
+### Upload your objects
+
+Push schemaless JSON objects to the Object Store. This enables their contents to be indexed for search.
+
+```python
+from objective import Client
+
+client = Client(api_key="sk_...")
+
+objects = []
+
+objects.append(
+    {
+        "id": "1",
+        "object": {
+            "title": "Sevendayz Men's Shady Records Eminem Hoodie Hoody Black Medium",
+            "brand": "sevendayz"
+        },
+    },
+)
+
+
+client.object_store.upsert_objects(objects)
+```
+which will upsert your objects and let you know once the operation is complete:
+```
+Successfully upserted 1 object.
+```
+
+You can use `client.object_store.delete_objects(["1"])` to delete this object from the object store.
+
+### Create an index and wait for indexing to be completed
+
+Create a search Index, which triggers the objects in the Object Store to be indexed.
+See our [docs](https://www.objective.inc/docs/index/api/create-index) for all options.
+
+```python
+from objective import Client
+
+client = Client(api_key="sk_...")
+
+index = client.indexes.create_index(
+    index_type="text-neural-base", fields={"searchable": ["title", "brand"]}
+)
+index.status(watch=True)
+```
+which returns information on how the objects are being processed and indexed:
+
+```
+Index idx_wXRUedqJkPof successfully created.
+Progress: [---------------------------------------------------------------] 0%
+```
+
+### Search
+
+Once the objects are live in the index, issue search requests.
+
+```python
+from objective import Client
+import json
+
+client = Client(api_key="sk_...")
+index = client.indexes.get_index(<<INSERT INDEX ID HERE>>)
+
+results = index.search(query="rapper hoodies", object_fields="*")
+print(json.dumps(results, indent=4))
+```
+
+which outputs the following search result format:
+
+```json
+{
+    "results": [
+        {
+            "id": 1,
+            "object": {"title": "Sevendayz Men's Shady Records Eminem Hoodie Hoody Black Medium", "brand": "sevendayz"}
+        }
+    ],
+    "pagination": {
+        "pages": 1,
+        "page": 1,
+        "next": null
+    }
+}
+```
+
+Congratulations, you just indexed and searched your first objects. To learn more and see more example code, check out our [docs](https://www.objective.inc/docs).
+
+
+## Development
+
+Use python build to build this package:
+
+```python
+python -m pip install --upgrade pip
+
+# Install dependencies
+pip install .
+
+# Build package:
+pip install build
+python -m build
+````
