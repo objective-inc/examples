@@ -2,6 +2,8 @@
 
 Welcome to the Objective E-commerce Quickstart repository! This project is designed to help you kickstart your e-commerce application using Next.js and a suite of modern development tools. It provides a solid foundation for building a scalable, feature-rich e-commerce platform.
 
+✨ **Live demo:** https://examples-ecommerce-quickstart.vercel.app/search?query=army+colored+jackets
+
 # Features
 
 -   Next.js Framework: Leverage the power of Next.js for server-side rendering, static site generation, and API routes.
