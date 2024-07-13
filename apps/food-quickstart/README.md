@@ -2,6 +2,8 @@
 
 Welcome to the Objective Food Store Quickstart repository! This project is designed to help you kickstart your food marketplace application using Next.js and a suite of modern development tools. It provides a solid foundation for building a scalable, feature-rich e-commerce platform.
 
+✨ **Live demo:** https://examples-food-quickstart.vercel.app/search?query=something+warm+and+hearty
+
 # Features
 
 -   Next.js Framework: Leverage the power of Next.js for server-side rendering, static site generation, and API routes.
