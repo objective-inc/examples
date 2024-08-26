@@ -20,16 +20,22 @@ const uploadData = async () => {
         }
 
         // Create a promise for each POST request
-        const uploadPromises = objects.map((obj) => {
-            const config = {
-                ...axiosConfig,
-                data: obj,
-            }
-            return axios(config)
-        })
+        const objects_ = [...objects];
+        while (objects_.length > 0) {
+            console.log(`${objects_.length} objects remaining...`)
+            const buffer = objects_.splice(0, 1000);
+            const uploadPromises = buffer.map((obj) => {
+                const config = {
+                    ...axiosConfig,
+                    data: obj,
+                }
+                return axios(config)
+            })
+            await Promise.all(uploadPromises)
+            console.log(`1000 objects uploaded`)
+        }
 
         // Execute all POST requests concurrently
-        await Promise.all(uploadPromises)
         console.log("All data uploaded successfully.")
     } catch (error) {
         console.error("Error uploading data:", error)
