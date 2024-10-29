@@ -5,7 +5,7 @@ export const indexSearchSchema = z.object({
     filterQuery: z.string().optional().default(""),
     view: z.string().optional().default(""),
     limit: z.coerce.number().optional().default(12),
-    offset: z.coerce.number().optional().default(0),
+    offset: z.coerce.number().max(1000).optional().default(0),
 })
 
 export type TIndexSearch = z.infer<typeof indexSearchSchema>
