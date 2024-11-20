@@ -305,6 +305,9 @@ importers:
       next:
         specifier: latest
         version: 14.1.3(react-dom@18.0.0)(react@18.0.0)
+      objective-sdk:
+        specifier: ^1.0.3
+        version: 1.0.3
       react:
         specifier: ^18
         version: 18.0.0
@@ -4541,10 +4544,6 @@ packages:
       define-properties: 1.2.0
       es-abstract: 1.21.2
     dev: true
-
-  /objective-sdk@1.0.2:
-    resolution: {integrity: sha512-sFGV8djGnZvkPPWsej/hmlsYlEok1d3GNa9u/EmRZ7jbV2a8MQ2gkih6p/GjIMdrjdTmVhF6CVkMa9LCOyNNbQ==}
-    dev: false
 
   /objective-sdk@1.0.3:
     resolution: {integrity: sha512-XsqIuE1kETnj1mHZaIJviGwQFqKwDQvjXnaGzt2oosi7ym+UVln3UOowvt5Y8dVLW3N89fBQ4D+TTBWbjvTQVA==}
